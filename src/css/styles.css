@@ -1,0 +1,556 @@
+body {
+    background-color: #282828;
+    color: #fff;
+    font-family: 'Chalet';
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.cabecalho {
+    height: 80px;
+    width: 100%;
+    background-color: #0B0A0C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    border-bottom: solid 2px #282828;
+    position: fixed;
+    transition: 0.3s;
+    z-index: 3;
+}
+
+.cabecalho .logo {
+    display: flex;
+    gap: 10px;
+}
+
+.cabecalho .logo .menu-hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.cabecalho .logo .menu-hamburguer .menu-icon {
+    filter: invert(100);
+    width: 120px;
+}
+
+.cabecalho .menu {
+    display: flex;
+}
+
+.cabecalho.ativo .menu {
+    gap: 15px;
+    padding-top: 20px;
+    display: flex;
+    opacity: 1;
+    z-index: 3;
+}
+
+.cabecalho.ativo {
+    padding: 120px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho .menu li a {
+    color: #e8e8e8;
+    padding: 30px;
+    font-weight: bolder;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.cabecalho .menu li a:hover {
+    border-bottom: solid 2px #e8e8e8;
+}
+
+.home {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    padding-top: 80px;
+}
+
+.home::after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 45px;
+    height: 130vh;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, .7) 35%, transparent 65%);
+}
+
+.home .imagem-fundo {
+    width: 100%;
+    object-fit: cover;
+}
+
+.home .info {
+    position: absolute;
+    z-index: 2;
+    min-height: 90.4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 180px;
+    margin: 10px 0;
+    max-width: 920px;
+    gap: 10px;
+}
+
+.home .info .lista-de-jogos {
+    display: flex;
+    max-width: 140px;
+    gap: 32px;
+}
+
+.home .info .titulo {
+    font-family: 'ChaletComprime';
+    font-size: 55px;
+}
+
+.home .info .texto {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn-comprar,
+.btn-plataforma {
+    background-color: rgba(255, 255, 255, 0.271);
+    color: #fff;
+    padding: 15px 40px;
+    width: 50%;
+    border: solid 0.5px #fff;
+    border-radius: 3px;
+    font-family: 'ChaletComprime';
+    font-size: 30px;
+    text-align: center;
+    transition: 0.3s ease-in;
+}
+
+.home .info .btn-comprar:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.historia {
+    position: relative;
+    z-index: 1;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    background-image: url(../imagens/bg-section.jpg);
+    background-size: cover;
+}
+
+.historia .historia-gta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.historia .historia-gta .personagens {
+    width: 420px;
+    height: 420px;
+}
+
+.historia .historia-gta .conteudo {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.historia .historia-gta .conteudo img {
+    width: 150px;
+}
+
+.historia .historia-gta .conteudo h3 {
+    font-size: 28px;
+}
+
+.historia .historia-gta .conteudo p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.compre-ja .capa-do-jogo {
+    width: clamp(150px, 100%, 270px);
+    align-self: center;
+}
+
+.compre-ja {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+
+.compre-ja .cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.compre-ja .cards .card {
+    background-color: #0B0A0C;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    width: 45%;
+    height: 100%;
+    border-radius: 10px;
+    gap: 50px;
+}
+
+.compre-ja .cards .card span {
+    background-color: #121113;
+    border: solid 1px #232125;
+    padding: 20px;
+}
+
+.compre-ja .cards .card .info-jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.compre-ja .cards .card .info-jogo h3 {
+    font-family: 'ChaletComprime';
+    font-size: 54px;
+    font-weight: 700;
+}
+
+.compre-ja .cards .card .info-jogo p {
+    color: #e8e8e8;
+    font-size: 16px;
+}
+
+.compre-ja .cards .card .info-jogo .plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.compre-ja .cards .card .btn-plataforma {
+    width: 100%;
+    cursor: pointer;
+    font-size: 32px;
+    transition: 0.2s;
+}
+
+.compre-ja .cards .card:last-child .btn-plataforma {
+    margin-top: 66px;
+}
+
+.compre-ja .cards .card .btn-plataforma:hover {
+    background-color: rgba(255, 255, 255, 0.337);
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+    display: none;
+    opacity: 0;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas.ativo {
+    display: flex;
+    opacity: 1;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li {
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 15px;
+    transition: 0.3s;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li:nth-child(2n-1) {
+    border: solid 2px #0B2C58
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li:nth-child(2n-1):hover {
+    background-color: #0B2C58
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li:nth-child(2n) {
+    border: solid 2px #388525;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li:nth-child(2n):hover {
+    background-color: #388525;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li:nth-child(5) {
+    border: solid 1px #FDAF17;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li:nth-child(5):hover {
+    background-color: #FDAF17;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas li img {
+    width: 150px;
+}
+
+.compre-ja .cards .card .btn-plataforma .plataformas .logo-pc {
+    width: 50px;
+}
+
+@media(max-width: 1015px) {
+    .cabecalho {
+        flex-direction: column;
+        justify-content: center;
+        padding: 57px 0px;
+        gap: 20px;
+    }
+
+    .cabecalho .menu li a {
+        padding: 20px;
+    }
+
+    .home .info {
+        margin: -20px;
+        max-width: 830px;
+    }
+
+    .home .info .lista-de-jogos {
+        max-width: 110px;
+    }
+
+    .home .info .titulo {
+        font-size: 40px;
+    }
+
+    .home .info .texto {
+        font-size: 16px;
+    }
+
+    .btn-comprar,
+    .btn-plataforma {
+        padding: 10px 30px;
+        width: 50%;
+        font-size: 25px;
+    }
+
+    .historia {
+        padding: 100px 40px;
+    }
+
+    .historia .historia-gta {
+        flex-wrap: wrap;
+
+    }
+
+    .historia .historia-gta .personagens {
+        width: 65%;
+        height: 90%;
+    }
+
+    .historia .historia-gta .conteudo {
+        max-width: 700px;
+        margin-top: 50px;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    .historia .historia-gta .conteudo img {
+        width: 125px;
+        position: absolute;
+        left: 0;
+        top: -120px;
+    }
+
+    .historia .historia-gta .conteudo h3 {
+        font-size: 26px;
+    }
+
+    .compre-ja {
+        padding: 30px;
+    }
+
+    .compre-ja .cards .card {
+        padding: 40px;
+        width: 100%;
+    }
+
+    .compre-ja .cards .card span {
+        font-size: 14px;
+    }
+
+    .compre-ja .cards .card .info-jogo h3 {
+        font-size: 42px;
+    }
+
+    .compre-ja .cards .card .info-jogo p {
+        font-size: 14px;
+    }
+
+    .compre-ja .cards .card .info-jogo .plataformas li img {
+        max-width: 95px;
+    }
+
+    .compre-ja .cards .card:last-child .btn-plataforma {
+        margin-top: 45px;
+    }
+
+}
+
+@media(max-width: 710px) {
+    .home .info .lista-de-jogos {
+        max-width: 80px;
+    }
+
+    .home .info {
+        padding: 0 100px;
+    }
+
+    .home .info .titulo {
+        font-size: 36px;
+    }
+
+    .btn-comprar,
+    .btn-plataforma {
+        width: 100%;
+    }
+
+    .historia .historia-gta .conteudo img {
+        width: 65px;
+        top: -70px;
+    }
+
+    .compre-ja .cards {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .compre-ja .cards .card {
+        align-items: center;
+        text-align: center;
+        padding: 60px 40px;
+    }
+
+    .compre-ja .cards .card .info-jogo {
+        text-align: center;
+        align-items: center;
+    }
+
+    .compre-ja .cards .card .info-jogo .plataformas {
+        justify-content: center;
+    }
+
+    .compre-ja .cards .card .btn-plataforma {
+        font-size: 28px;
+    }
+}
+
+@media(max-width: 425px) {
+    .cabecalho {
+        gap: 0px;
+        padding: 20px 0;
+        justify-content: center;
+    }
+
+    .cabecalho .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cabecalho .menu li a {
+        padding: 10px;
+        margin-block: 10px;
+    }
+
+    .cabecalho .menu li a:hover {
+        border-inline: solid 2px #e8e8e8;
+        border-bottom: none;
+    }
+
+    .cabecalho .logo img {
+        max-width: 180px;
+    }
+
+    .cabecalho .logo img:first-child {
+        max-width: 30px;
+    }
+
+    .cabecalho .logo .menu-hamburguer {
+        display: block;
+    }
+
+    .cabecalho .menu {
+        display: none;
+        opacity: 0;
+    }
+
+
+    .home .info {
+        margin-top: 10px;
+    }
+
+    .home .info .lista-de-jogos {
+        max-width: 70px;
+    }
+
+    .home .info {
+        padding: 0 50px;
+    }
+
+    .home .info .titulo {
+        font-size: 28px;
+    }
+
+    .home .info .texto {
+        font-size: 14px;
+    }
+
+    .home::after {
+        height: 90.5%;
+    }
+
+    .historia {
+        padding: 60px 50px;
+    }
+
+    .home .imagem-fundo {
+        object-fit: cover;
+    }
+
+    .historia .historia-gta .personagens {
+        width: 110%;
+    }
+
+    .historia .historia-gta .conteudo img {
+        width: 45px;
+        top: -44px;
+        left: 0px;
+    }
+
+    .compre-ja .cards .card {
+        padding: 40px;
+        gap: 40px;
+    }
+
+    .compre-ja .cards .card .info-jogo {
+        gap: 10px;
+    }
+
+    .compre-ja .cards .card:last-child .btn-plataforma {
+        margin-top: 0;
+        padding: 20px;
+    }
+
+    .compre-ja .cards .card .btn-plataforma .plataformas li img{
+        max-width: clamp(85px, 90%, 100px);
+    }
+}
